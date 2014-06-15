@@ -37,6 +37,7 @@ names(avg.steps)<-c("interval","avgSteps")
 ### Time Series plot of 5-minute interval averages:
 ```{r AvgStepsTimeSeries, fig.width=7, fig.height=6}
 plot(avg.steps,type="l",xlab="Time Interval",ylab="Average Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 ```
 ### 5-minute interval with maximum average:
 ```{r}
@@ -94,7 +95,9 @@ avg.weekend.steps<-aggregate(m[m$dayType=="weekend",2],by=list(m[m$dayType=="wee
 ```{r AvgStepsweekdayWeekendTimeSeries, fig.width=7, fig.height=12}
 layout(1:2)
 plot(avg.weekday.steps,type="l",xlab="Time Interval",ylab="Average Weekday Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 plot(avg.weekend.steps,type="l",xlab="Time Interval",ylab="Average Weekend Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 ```
 
 The plots show that during the week most of the step activity is in the morning hours when preparing for work and commuting. The distribution for the weekend is spread out more evenly across the afternoon hours.

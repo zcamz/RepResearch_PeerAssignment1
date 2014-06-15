@@ -39,6 +39,7 @@ names(avg.steps)<-c("interval","avgSteps")
 
 ```r
 plot(avg.steps,type="l",xlab="Time Interval",ylab="Average Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 ```
 
 ![plot of chunk AvgStepsTimeSeries](figure/AvgStepsTimeSeries.png) 
@@ -106,7 +107,9 @@ avg.weekend.steps<-aggregate(m[m$dayType=="weekend",2],by=list(m[m$dayType=="wee
 ```r
 layout(1:2)
 plot(avg.weekday.steps,type="l",xlab="Time Interval",ylab="Average Weekday Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 plot(avg.weekend.steps,type="l",xlab="Time Interval",ylab="Average Weekend Steps")
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
 ```
 
 ![plot of chunk AvgStepsweekdayWeekendTimeSeries](figure/AvgStepsweekdayWeekendTimeSeries.png) 
